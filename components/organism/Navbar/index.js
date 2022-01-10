@@ -1,16 +1,17 @@
 import LinkItem from "./LinkItem";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <>
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 drop-shadow">
         <div className="container flex flex-wrap justify-between items-center mx-auto px-6 md:px-16">
-          <a href="/" className="flex">
-            <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-white">
+          <Link href="/" className="flex">
+            <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-white cursor-pointer">
               <span className="text-blue-700 font-semibold">Buka</span>Resep
             </span>
-          </a>
+          </Link>
           <div className="flex md:order-2">
             <div className="hidden relative mr-3 md:mr-0 md:block">
               <div className="flex absolute inset-y-0 left-0 items-center pl-4 pointer-events-none">

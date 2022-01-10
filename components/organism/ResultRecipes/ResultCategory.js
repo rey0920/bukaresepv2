@@ -1,22 +1,21 @@
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { getNewRecipes } from "../../../services/masakan";
+import { getPageRecipes } from "../../../services/masakan";
 import RecipesCard from "../../molecules/Card";
 import LoadingCard from "../../molecules/Card/LoadingCard";
 
-export default function ResultRecipes() {
+export default function ResultCategory() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getNewRecipesAPI = useCallback(async () => {
-    const data = await getNewRecipes();
+  const getPageRecipesAPI = useCallback(async () => {
+    const data = await getPageRecipes();
     console.log(data);
     setRecipes(data);
     setLoading(true);
-  }, [getNewRecipes]);
+  }, [getPageRecipes]);
 
   useEffect(() => {
-    getNewRecipesAPI();
+    getPageRecipesAPI();
   }, []);
 
   const loadingPost = new Array(4);

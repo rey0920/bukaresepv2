@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Badge from "./Badge";
 
-export default function ReceiptCard(props) {
+export default function NextPageCard(props) {
   const { thumb, title, dificulty, portion, times, id } = props;
   return (
-    <Link href={`/resep/${id}`}>
+    <Link href={`/page/${id}`}>
       <a>
         <div className="rounded overflow-hidden shadow-lg cursor-pointer">
           <img

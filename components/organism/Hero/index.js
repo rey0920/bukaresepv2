@@ -1,4 +1,12 @@
+import { useState } from "react/cjs/react.development";
+
 export default function Hero() {
+  const [search, setSearch] = useState("");
+
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="grid justify-items-center">
       <h1 className="text-5xl font-semibold text-transparent bg-gradient-to-br from-blue-600 to-indigo-900 bg-clip-text">
@@ -9,7 +17,7 @@ export default function Hero() {
         <span className="text-blue-500">resepnya</span> ada{" "}
         <span className="text-blue-500">disini!</span>
       </p>
-      <form action="" className="flex mb-3">
+      <form onSubmit={HandleSubmit} className="flex mb-3">
         <div class="relative mr-3 md:mr-0 md:block">
           <div class="flex absolute inset-y-0 left-0 items-center pl-4 pointer-events-none">
             <svg
@@ -30,11 +38,10 @@ export default function Hero() {
             id="email-adress-icon"
             class="block pl-12 pr-36 py-3 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:outline-none focus:ring focus:ring-blue-200"
             placeholder="Cari Resep"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <button className="px-6 ml-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
-          Cari
-        </button>
       </form>
     </div>
   );

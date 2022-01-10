@@ -9,3 +9,21 @@ export async function getNewRecipes() {
 
   return responseAxios;
 }
+
+export async function getPageRecipes() {
+  const URL = "api/recipes/2";
+
+  const response = await axios.get(`${ROOT_API}/${URL}`);
+  const responseAxios = response.data.results;
+
+  return responseAxios;
+}
+
+export async function getDetailRecipes(id) {
+  const URL = `api/recipe/${id}`;
+
+  const response = await axios.get(`${ROOT_API}/${URL}`);
+  const responseAxios = response.data.results;
+
+  return responseAxios;
+}

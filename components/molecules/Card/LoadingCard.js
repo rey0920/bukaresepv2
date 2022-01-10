@@ -1,7 +1,7 @@
 export default function LoadingCard() {
   return (
     <>
-      <div className="w-60 rounded overflow-hidden shadow-lg animate-pulse">
+      <div className="rounded overflow-hidden shadow-lg animate-pulse">
         <div className="bg-gray-300 text-gray-300 w-full h-32">
           <br />
         </div>
